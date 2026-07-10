@@ -327,6 +327,7 @@ class _Translations$NetConnectionsScreen$pt implements Translations$NetConnectio
 	// Translations
 	@override String get copyAsCSV => 'Copiado para formato CSV';
 	@override String get selectType => 'Selecionar Tipo de Desvio';
+	@override String get loopbackWarning => 'Pode ter ocorrido um loop de rede. Verifique as configurações do adaptador de rede';
 }
 
 // Path: PerAppAndroidScreen
@@ -1035,6 +1036,7 @@ extension on TranslationsPt {
 			'NetConnectionsFilterScreen.chain' => 'Saída',
 			'NetConnectionsScreen.copyAsCSV' => 'Copiado para formato CSV',
 			'NetConnectionsScreen.selectType' => 'Selecionar Tipo de Desvio',
+			'NetConnectionsScreen.loopbackWarning' => 'Pode ter ocorrido um loop de rede. Verifique as configurações do adaptador de rede',
 			'PerAppAndroidScreen.title' => 'Proxy por Aplicação',
 			'PerAppAndroidScreen.whiteListMode' => 'Modo Whitelist',
 			'PerAppAndroidScreen.whiteListModeTip' => 'Quando ativado: apenas as aplicações marcadas são proxies; quando não ativado: apenas as aplicações não marcadas são proxies',
@@ -1464,9 +1466,9 @@ extension on TranslationsPt {
 			'isp.unbind' => ({required Object p}) => 'Desvincular[${p}]',
 			'isp.faq' => ({required Object p}) => 'FAQ[${p}]',
 			'isp.customerService' => ({required Object p}) => 'Telegram[${p}]',
-			'isp.follow' => ({required Object p}) => 'Seguir[${p}]',
 			_ => null,
 		} ?? switch (path) {
+			'isp.follow' => ({required Object p}) => 'Seguir[${p}]',
 			'isp.invalidOrExpired' => '[${_root.meta.isp}] Inválido ou expirado',
 			'permission.camera' => 'Câmara',
 			'permission.screen' => 'Gravação de Ecrã',

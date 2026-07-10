@@ -558,6 +558,9 @@ class Translations$NetConnectionsScreen$en {
 
 	/// en: 'Select Diversion Type'
 	String get selectType => 'Select Diversion Type';
+
+	/// en: 'A network loop may have occurred. Please check your network adapter settings.'
+	String get loopbackWarning => 'A network loop may have occurred. Please check your network adapter settings.';
 }
 
 // Path: PerAppAndroidScreen
@@ -2172,6 +2175,7 @@ extension on Translations {
 			'NetConnectionsFilterScreen.chain' => 'Outbound',
 			'NetConnectionsScreen.copyAsCSV' => 'Copied to CSV format',
 			'NetConnectionsScreen.selectType' => 'Select Diversion Type',
+			'NetConnectionsScreen.loopbackWarning' => 'A network loop may have occurred. Please check your network adapter settings.',
 			'PerAppAndroidScreen.title' => 'Per-App Proxy',
 			'PerAppAndroidScreen.whiteListMode' => 'Whitelist Mode',
 			'PerAppAndroidScreen.whiteListModeTip' => 'When enabled: only the apps that have been checked are proxies; when not enabled: only the apps that are not checked are proxies',
@@ -2601,9 +2605,9 @@ extension on Translations {
 			'isp.unbind' => ({required Object p}) => 'Unbind[${p}]',
 			'isp.faq' => ({required Object p}) => 'FAQ[${p}]',
 			'isp.customerService' => ({required Object p}) => 'Telegram[${p}]',
-			'isp.follow' => ({required Object p}) => 'Follow[${p}]',
 			_ => null,
 		} ?? switch (path) {
+			'isp.follow' => ({required Object p}) => 'Follow[${p}]',
 			'isp.invalidOrExpired' => '[${_root.meta.isp}] Invalid or expired',
 			'permission.camera' => 'Camera',
 			'permission.screen' => 'Screen Recording',

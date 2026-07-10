@@ -327,6 +327,7 @@ class _Translations$NetConnectionsScreen$ru implements Translations$NetConnectio
 	// Translations
 	@override String get copyAsCSV => 'Скопировано в CSV формате';
 	@override String get selectType => 'Выберите тип перенаправления';
+	@override String get loopbackWarning => 'Возможно, возникло сетевое зацикливание. Проверьте настройки сетевого адаптера';
 }
 
 // Path: PerAppAndroidScreen
@@ -1035,6 +1036,7 @@ extension on TranslationsRu {
 			'NetConnectionsFilterScreen.chain' => 'Исходящий',
 			'NetConnectionsScreen.copyAsCSV' => 'Скопировано в CSV формате',
 			'NetConnectionsScreen.selectType' => 'Выберите тип перенаправления',
+			'NetConnectionsScreen.loopbackWarning' => 'Возможно, возникло сетевое зацикливание. Проверьте настройки сетевого адаптера',
 			'PerAppAndroidScreen.title' => 'Проксируемые приложения',
 			'PerAppAndroidScreen.whiteListMode' => 'Режим белого списка',
 			'PerAppAndroidScreen.whiteListModeTip' => 'Если включено: перенаправляются через прокси-сервер только те приложения, которые были отмечены. Если выключено: перенаправляются через прокси-сервер только те приложения, которые не были отмечены.',
@@ -1464,9 +1466,9 @@ extension on TranslationsRu {
 			'isp.unbind' => ({required Object p}) => 'Отвязать[${p}]',
 			'isp.faq' => ({required Object p}) => 'Часто задаваемые вопросы[${p}]',
 			'isp.customerService' => ({required Object p}) => 'Служба поддержки клиентов[${p}]',
-			'isp.follow' => ({required Object p}) => 'Следуйте[${p}]',
 			_ => null,
 		} ?? switch (path) {
+			'isp.follow' => ({required Object p}) => 'Следуйте[${p}]',
 			'isp.invalidOrExpired' => '[${_root.meta.isp}]Недействительно, или срок действия истек',
 			'permission.camera' => 'Камера',
 			'permission.screen' => 'Запись экрана',

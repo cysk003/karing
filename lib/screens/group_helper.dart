@@ -2883,7 +2883,6 @@ class GroupHelper {
     }
 
     var error = await ServerManager.reloadFromZip(
-      url,
       zipPath,
       whiteList: importResult.whiletList!,
       tun: importResult.tun,

@@ -105,7 +105,8 @@
     },
     "NetConnectionsScreen": {
         "copyAsCSV": "Copied to CSV format",
-        "selectType": "Select Diversion Type"
+        "selectType": "Select Diversion Type",
+        "loopbackWarning": "A network loop may have occurred. Please check your network adapter settings."
     },
     "PerAppAndroidScreen": {
         "title": "Per-App Proxy",

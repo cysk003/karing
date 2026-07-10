@@ -327,6 +327,7 @@ class _Translations$NetConnectionsScreen$hi implements Translations$NetConnectio
 	// Translations
 	@override String get copyAsCSV => 'CSV प्रारूप में कॉपी किया गया';
 	@override String get selectType => 'विचलन प्रकार चुनें';
+	@override String get loopbackWarning => 'नेटवर्क में लूपबैक हो सकता है, कृपया नेटवर्क एडेप्टर सेटिंग्स जांचें';
 }
 
 // Path: PerAppAndroidScreen
@@ -1035,6 +1036,7 @@ extension on TranslationsHi {
 			'NetConnectionsFilterScreen.chain' => 'आउटबाउंड',
 			'NetConnectionsScreen.copyAsCSV' => 'CSV प्रारूप में कॉपी किया गया',
 			'NetConnectionsScreen.selectType' => 'विचलन प्रकार चुनें',
+			'NetConnectionsScreen.loopbackWarning' => 'नेटवर्क में लूपबैक हो सकता है, कृपया नेटवर्क एडेप्टर सेटिंग्स जांचें',
 			'PerAppAndroidScreen.title' => 'प्रति-ऐप प्रॉक्सी',
 			'PerAppAndroidScreen.whiteListMode' => 'श्वेतसूची मोड',
 			'PerAppAndroidScreen.whiteListModeTip' => 'जब सक्षम किया जाता है: केवल चिह्नित ऐप ही प्रॉक्सी होते हैं; जब सक्षम नहीं किया जाता है: केवल अचिह्नित ऐप ही प्रॉक्सी होते हैं',
@@ -1464,9 +1466,9 @@ extension on TranslationsHi {
 			'isp.unbind' => ({required Object p}) => 'अनबाइंड करें[${p}]',
 			'isp.faq' => ({required Object p}) => 'FAQ[${p}]',
 			'isp.customerService' => ({required Object p}) => 'Telegram[${p}]',
-			'isp.follow' => ({required Object p}) => 'फॉलो करें[${p}]',
 			_ => null,
 		} ?? switch (path) {
+			'isp.follow' => ({required Object p}) => 'फॉलो करें[${p}]',
 			'isp.invalidOrExpired' => '[${_root.meta.isp}] अमान्य या समाप्त हो गया',
 			'permission.camera' => 'कैमरा',
 			'permission.screen' => 'स्क्रीन रिकॉर्डिंग',

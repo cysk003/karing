@@ -105,7 +105,8 @@
     },
     "NetConnectionsScreen": {
         "copyAsCSV": "Αντιγράφηκε σε μορφή CSV",
-        "selectType": "Επιλογή τύπου εκτροπής"
+        "selectType": "Επιλογή τύπου εκτροπής",
+        "loopbackWarning": "Μπορεί να έχει προκύψει βρόχος δικτύου. Ελέγξτε τις ρυθμίσεις του προσαρμογέα δικτύου"
     },
     "PerAppAndroidScreen": {
         "title": "Proxy ανά εφαρμογή",

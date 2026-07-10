@@ -327,6 +327,7 @@ class _Translations$NetConnectionsScreen$no implements Translations$NetConnectio
 	// Translations
 	@override String get copyAsCSV => 'Kopiert til CSV-format';
 	@override String get selectType => 'Velg omledningstype';
+	@override String get loopbackWarning => 'En nettverksløkke kan ha oppstått. Kontroller innstillingene for nettverksadapteret';
 }
 
 // Path: PerAppAndroidScreen
@@ -1035,6 +1036,7 @@ extension on TranslationsNo {
 			'NetConnectionsFilterScreen.chain' => 'Utgående',
 			'NetConnectionsScreen.copyAsCSV' => 'Kopiert til CSV-format',
 			'NetConnectionsScreen.selectType' => 'Velg omledningstype',
+			'NetConnectionsScreen.loopbackWarning' => 'En nettverksløkke kan ha oppstått. Kontroller innstillingene for nettverksadapteret',
 			'PerAppAndroidScreen.title' => 'Proxy per app',
 			'PerAppAndroidScreen.whiteListMode' => 'Hvitelist-modus',
 			'PerAppAndroidScreen.whiteListModeTip' => 'Når aktivert: bare de merkede appene bruker proxy; når ikke aktivert: bare de umerkede appene bruker proxy',
@@ -1464,9 +1466,9 @@ extension on TranslationsNo {
 			'isp.unbind' => ({required Object p}) => 'Fjern binding[${p}]',
 			'isp.faq' => ({required Object p}) => 'FAQ[${p}]',
 			'isp.customerService' => ({required Object p}) => 'Telegram[${p}]',
-			'isp.follow' => ({required Object p}) => 'Følg[${p}]',
 			_ => null,
 		} ?? switch (path) {
+			'isp.follow' => ({required Object p}) => 'Følg[${p}]',
 			'isp.invalidOrExpired' => '[${_root.meta.isp}] Ugyldig eller utløpt',
 			'permission.camera' => 'Kamera',
 			'permission.screen' => 'Skjermopptak',

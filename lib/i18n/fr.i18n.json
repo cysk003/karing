@@ -105,7 +105,8 @@
     },
     "NetConnectionsScreen": {
         "copyAsCSV": "Copié au format CSV",
-        "selectType": "Sélectionner le type de diversion"
+        "selectType": "Sélectionner le type de diversion",
+        "loopbackWarning": "Une boucle réseau a peut-être été détectée. Veuillez vérifier les paramètres de votre carte réseau"
     },
     "PerAppAndroidScreen": {
         "title": "Proxy par application",

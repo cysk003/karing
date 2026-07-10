@@ -105,7 +105,8 @@
     },
     "NetConnectionsScreen": {
         "copyAsCSV": "در فرمت CAV کپی شد",
-        "selectType": "انتخاب نوع انحراف"
+        "selectType": "انتخاب نوع انحراف",
+        "loopbackWarning": "ممکن است حلقه شبکه رخ داده باشد. لطفاً تنظیمات آداپتور شبکه را بررسی کنید"
     },
     "PerAppAndroidScreen": {
         "title": "پروکسی به‌تفکیک برنامه",

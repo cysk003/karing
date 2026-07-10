@@ -105,7 +105,8 @@
     },
     "NetConnectionsScreen": {
         "copyAsCSV": "Disalin sebagai format CSV",
-        "selectType": "Pilih tipe routing"
+        "selectType": "Pilih tipe routing",
+        "loopbackWarning": "Kemungkinan terjadi loopback jaringan. Periksa pengaturan adaptor jaringan"
     },
     "PerAppAndroidScreen": {
         "title": "Proxy per aplikasi",

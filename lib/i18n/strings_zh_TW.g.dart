@@ -327,6 +327,7 @@ class Translations$NetConnectionsScreen$zh_TW implements Translations$NetConnect
 	// Translations
 	@override String get copyAsCSV => '已複製為 CSV 格式';
 	@override String get selectType => '選擇分流類型';
+	@override String get loopbackWarning => '網路可能出現回環，請檢查網卡設定';
 }
 
 // Path: PerAppAndroidScreen
@@ -1035,6 +1036,7 @@ extension on TranslationsZhTw {
 			'NetConnectionsFilterScreen.chain' => '出站',
 			'NetConnectionsScreen.copyAsCSV' => '已複製為 CSV 格式',
 			'NetConnectionsScreen.selectType' => '選擇分流類型',
+			'NetConnectionsScreen.loopbackWarning' => '網路可能出現回環，請檢查網卡設定',
 			'PerAppAndroidScreen.title' => '分應用代理',
 			'PerAppAndroidScreen.whiteListMode' => '白名單模式',
 			'PerAppAndroidScreen.whiteListModeTip' => '啟用後: 僅代理已勾選的 App; 未啟用: 僅代理未勾選的 App',
@@ -1464,9 +1466,9 @@ extension on TranslationsZhTw {
 			'isp.unbind' => ({required Object p}) => '解除綁定 [${p}]',
 			'isp.faq' => ({required Object p}) => '常見問題 [${p}]',
 			'isp.customerService' => ({required Object p}) => '客服 [${p}]',
-			'isp.follow' => ({required Object p}) => '關注 [${p}]',
 			_ => null,
 		} ?? switch (path) {
+			'isp.follow' => ({required Object p}) => '關注 [${p}]',
 			'isp.invalidOrExpired' => '[${_root.meta.isp}] 無效或已過期',
 			'permission.camera' => '攝像頭',
 			'permission.screen' => '螢幕錄製',

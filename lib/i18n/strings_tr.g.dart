@@ -327,6 +327,7 @@ class _Translations$NetConnectionsScreen$tr implements Translations$NetConnectio
 	// Translations
 	@override String get copyAsCSV => 'CSV formatına kopyalandı';
 	@override String get selectType => 'Yönlendirme Türünü Seçin';
+	@override String get loopbackWarning => 'Ağ döngüsü oluşmuş olabilir. Lütfen ağ bağdaştırıcısı ayarlarını kontrol edin';
 }
 
 // Path: PerAppAndroidScreen
@@ -1035,6 +1036,7 @@ extension on TranslationsTr {
 			'NetConnectionsFilterScreen.chain' => 'Giden',
 			'NetConnectionsScreen.copyAsCSV' => 'CSV formatına kopyalandı',
 			'NetConnectionsScreen.selectType' => 'Yönlendirme Türünü Seçin',
+			'NetConnectionsScreen.loopbackWarning' => 'Ağ döngüsü oluşmuş olabilir. Lütfen ağ bağdaştırıcısı ayarlarını kontrol edin',
 			'PerAppAndroidScreen.title' => 'Uygulama Başına Proxy',
 			'PerAppAndroidScreen.whiteListMode' => 'Beyaz Liste Modu',
 			'PerAppAndroidScreen.whiteListModeTip' => 'Etkinleştirildiğinde: yalnızca işaretli olan uygulamalar proxy üzerinden geçer; etkinleştirilmediğinde: yalnızca işaretli olmayan uygulamalar proxy üzerinden geçer',
@@ -1464,9 +1466,9 @@ extension on TranslationsTr {
 			'isp.unbind' => ({required Object p}) => 'Bağlantıyı Kes [${p}]',
 			'isp.faq' => ({required Object p}) => 'SSS [${p}]',
 			'isp.customerService' => ({required Object p}) => 'Telegram [${p}]',
-			'isp.follow' => ({required Object p}) => 'Takip Et [${p}]',
 			_ => null,
 		} ?? switch (path) {
+			'isp.follow' => ({required Object p}) => 'Takip Et [${p}]',
 			'isp.invalidOrExpired' => '[${_root.meta.isp}] Geçersiz veya süresi dolmuş',
 			'permission.camera' => 'Kamera',
 			'permission.screen' => 'Ekran Kaydı',

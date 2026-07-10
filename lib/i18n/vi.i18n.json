@@ -105,7 +105,8 @@
     },
     "NetConnectionsScreen": {
         "copyAsCSV": "Đã sao chép định dạng CSV",
-        "selectType": "Chọn loại phân luồng"
+        "selectType": "Chọn loại phân luồng",
+        "loopbackWarning": "Có thể đã xảy ra vòng lặp mạng. Vui lòng kiểm tra cài đặt card mạng"
     },
     "PerAppAndroidScreen": {
         "title": "Proxy cho từng ứng dụng",

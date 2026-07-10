@@ -105,7 +105,8 @@
     },
     "NetConnectionsScreen": {
         "copyAsCSV": "Skopiowano do formatu CSV",
-        "selectType": "Wybierz typ przekierowania"
+        "selectType": "Wybierz typ przekierowania",
+        "loopbackWarning": "Mogło wystąpić zapętlenie sieci. Sprawdź ustawienia karty sieciowej"
     },
     "PerAppAndroidScreen": {
         "title": "Proxy dla poszczególnych aplikacji",

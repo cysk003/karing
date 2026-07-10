@@ -105,7 +105,8 @@
     },
     "NetConnectionsScreen": {
         "copyAsCSV": "CSV 形式でコピーしました",
-        "selectType": "分流タイプを選択"
+        "selectType": "分流タイプを選択",
+        "loopbackWarning": "ネットワークでループバックが発生している可能性があります。ネットワークアダプターの設定を確認してください"
     },
     "PerAppAndroidScreen": {
         "title": "アプリごとのプロキシ",

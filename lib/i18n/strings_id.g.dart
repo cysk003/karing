@@ -327,6 +327,7 @@ class _Translations$NetConnectionsScreen$id implements Translations$NetConnectio
 	// Translations
 	@override String get copyAsCSV => 'Disalin sebagai format CSV';
 	@override String get selectType => 'Pilih tipe routing';
+	@override String get loopbackWarning => 'Kemungkinan terjadi loopback jaringan. Periksa pengaturan adaptor jaringan';
 }
 
 // Path: PerAppAndroidScreen
@@ -1035,6 +1036,7 @@ extension on TranslationsId {
 			'NetConnectionsFilterScreen.chain' => 'Outbound',
 			'NetConnectionsScreen.copyAsCSV' => 'Disalin sebagai format CSV',
 			'NetConnectionsScreen.selectType' => 'Pilih tipe routing',
+			'NetConnectionsScreen.loopbackWarning' => 'Kemungkinan terjadi loopback jaringan. Periksa pengaturan adaptor jaringan',
 			'PerAppAndroidScreen.title' => 'Proxy per aplikasi',
 			'PerAppAndroidScreen.whiteListMode' => 'Mode daftar putih',
 			'PerAppAndroidScreen.whiteListModeTip' => 'Setelah diaktifkan: hanya aplikasi yang dicentang yang diproksi; jika tidak diaktifkan: hanya aplikasi yang tidak dicentang yang diproksi',
@@ -1464,9 +1466,9 @@ extension on TranslationsId {
 			'isp.unbind' => ({required Object p}) => 'Lepaskan ikatan [${p}]',
 			'isp.faq' => ({required Object p}) => 'Pertanyaan umum [${p}]',
 			'isp.customerService' => ({required Object p}) => 'Layanan pelanggan [${p}]',
-			'isp.follow' => ({required Object p}) => 'Ikuti [${p}]',
 			_ => null,
 		} ?? switch (path) {
+			'isp.follow' => ({required Object p}) => 'Ikuti [${p}]',
 			'isp.invalidOrExpired' => '[${_root.meta.isp}] tidak valid atau telah kedaluwarsa',
 			'permission.camera' => 'Kamera',
 			'permission.screen' => 'Perekaman layar',

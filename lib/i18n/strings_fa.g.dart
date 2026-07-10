@@ -327,6 +327,7 @@ class _Translations$NetConnectionsScreen$fa implements Translations$NetConnectio
 	// Translations
 	@override String get copyAsCSV => 'در فرمت CAV کپی شد';
 	@override String get selectType => 'انتخاب نوع انحراف';
+	@override String get loopbackWarning => 'ممکن است حلقه شبکه رخ داده باشد. لطفاً تنظیمات آداپتور شبکه را بررسی کنید';
 }
 
 // Path: PerAppAndroidScreen
@@ -1035,6 +1036,7 @@ extension on TranslationsFa {
 			'NetConnectionsFilterScreen.chain' => 'Outbound',
 			'NetConnectionsScreen.copyAsCSV' => 'در فرمت CAV کپی شد',
 			'NetConnectionsScreen.selectType' => 'انتخاب نوع انحراف',
+			'NetConnectionsScreen.loopbackWarning' => 'ممکن است حلقه شبکه رخ داده باشد. لطفاً تنظیمات آداپتور شبکه را بررسی کنید',
 			'PerAppAndroidScreen.title' => 'پروکسی به‌تفکیک برنامه',
 			'PerAppAndroidScreen.whiteListMode' => 'حالت لیست سفید',
 			'PerAppAndroidScreen.whiteListModeTip' => 'وقتی فعال باشد: فقط برنامه‌هایی که انتخاب شده‌اند پروکسی می‌شوند؛ وقتی فعال نباشد: فقط برنامه‌هایی که انتخاب نشده‌اند پروکسی می‌شوند',
@@ -1464,9 +1466,9 @@ extension on TranslationsFa {
 			'isp.unbind' => ({required Object p}) => 'لغو پیوند[${p}]',
 			'isp.faq' => ({required Object p}) => 'سوالات متداول[${p}]',
 			'isp.customerService' => ({required Object p}) => 'خدمات مشتری[${p}]',
-			'isp.follow' => ({required Object p}) => 'دنبال کردن[${p}]',
 			_ => null,
 		} ?? switch (path) {
+			'isp.follow' => ({required Object p}) => 'دنبال کردن[${p}]',
 			'isp.invalidOrExpired' => '[${_root.meta.isp}]نامعتبر یا منقضی شده است',
 			'permission.camera' => 'دوربین',
 			'permission.screen' => 'ضبط صفحه',

@@ -105,7 +105,8 @@
     },
     "NetConnectionsScreen": {
         "copyAsCSV": "已复制为CSV格式",
-        "selectType": "选择分流类型"
+        "selectType": "选择分流类型",
+        "loopbackWarning": "网络可能出现了回环,请检查网卡设置"
     },
     "PerAppAndroidScreen": {
         "title": "分应用代理",

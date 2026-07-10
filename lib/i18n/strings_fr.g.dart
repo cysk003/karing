@@ -327,6 +327,7 @@ class _Translations$NetConnectionsScreen$fr implements Translations$NetConnectio
 	// Translations
 	@override String get copyAsCSV => 'Copié au format CSV';
 	@override String get selectType => 'Sélectionner le type de diversion';
+	@override String get loopbackWarning => 'Une boucle réseau a peut-être été détectée. Veuillez vérifier les paramètres de votre carte réseau';
 }
 
 // Path: PerAppAndroidScreen
@@ -1035,6 +1036,7 @@ extension on TranslationsFr {
 			'NetConnectionsFilterScreen.chain' => 'Sortant',
 			'NetConnectionsScreen.copyAsCSV' => 'Copié au format CSV',
 			'NetConnectionsScreen.selectType' => 'Sélectionner le type de diversion',
+			'NetConnectionsScreen.loopbackWarning' => 'Une boucle réseau a peut-être été détectée. Veuillez vérifier les paramètres de votre carte réseau',
 			'PerAppAndroidScreen.title' => 'Proxy par application',
 			'PerAppAndroidScreen.whiteListMode' => 'Mode liste blanche',
 			'PerAppAndroidScreen.whiteListModeTip' => 'Si activé : seules les applications cochées passent par le proxy ; si désactivé : seules les applications non cochées passent par le proxy',
@@ -1464,9 +1466,9 @@ extension on TranslationsFr {
 			'isp.unbind' => ({required Object p}) => 'Délier [${p}]',
 			'isp.faq' => ({required Object p}) => 'FAQ [${p}]',
 			'isp.customerService' => ({required Object p}) => 'Telegram [${p}]',
-			'isp.follow' => ({required Object p}) => 'Suivre [${p}]',
 			_ => null,
 		} ?? switch (path) {
+			'isp.follow' => ({required Object p}) => 'Suivre [${p}]',
 			'isp.invalidOrExpired' => '[${_root.meta.isp}] Invalide ou expiré',
 			'permission.camera' => 'Appareil photo',
 			'permission.screen' => 'Enregistrement d\'écran',

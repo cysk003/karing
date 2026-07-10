@@ -105,7 +105,8 @@
     },
     "NetConnectionsScreen": {
         "copyAsCSV": "Kopieret til CSV-format",
-        "selectType": "Vælg omledningstype"
+        "selectType": "Vælg omledningstype",
+        "loopbackWarning": "Der kan være opstået en netværksløkke. Kontroller indstillingerne for netværksadapteren"
     },
     "PerAppAndroidScreen": {
         "title": "Proxy pr. app",
