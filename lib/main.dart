@@ -52,10 +52,22 @@ StartFailedReason? startFailedReason;
 String? startFailedReasonDesc;
 
 // Restores the window to its last saved position/size
-Future<bool> _restoreWindowBounds() async {
+Future<bool> _loadWindowBounds() async {
   final windowConfig = SettingManager.getConfig().window;
   if (windowConfig.width <= 0 || windowConfig.height <= 0) {
     return false;
+  }
+  if (windowConfig.x < 0) {
+    windowConfig.x = 0;
+  }
+  if (windowConfig.y < 0) {
+    windowConfig.y = 0;
+  }
+  if (windowConfig.width < SettingConfigItemWindow.kMinWindowSize.width) {
+    windowConfig.width = SettingConfigItemWindow.kMinWindowSize.width;
+  }
+  if (windowConfig.height < SettingConfigItemWindow.kMinWindowSize.height) {
+    windowConfig.height = SettingConfigItemWindow.kMinWindowSize.height;
   }
   final bounds = Rect.fromLTWH(
     windowConfig.x,
@@ -78,10 +90,21 @@ Future<bool> _restoreWindowBounds() async {
   }
 
   await windowManager.setBounds(bounds);
-  if (windowConfig.maximized) {
-    await windowManager.maximize();
-  }
   return true;
+}
+
+Future<void> _saveWindowBounds() async {
+  if (!PlatformUtils.isPC()) {
+    return;
+  }
+
+  final windowConfig = SettingManager.getConfig().window;
+  final bounds = await windowManager.getBounds();
+  windowConfig.x = bounds.left;
+  windowConfig.y = bounds.top;
+  windowConfig.width = bounds.width;
+  windowConfig.height = bounds.height;
+  await SettingManager.save();
 }
 
 void main(List<String> args) async {
@@ -102,7 +125,7 @@ void main(List<String> args) async {
   if (!SettingManager.getConfig().disableAppImproveData) {
     await SentryUtilsPrivate.init();
   }
-  if (Platform.isWindows || Platform.isLinux || Platform.isMacOS) {
+  if (PlatformUtils.isPC()) {
     await _ensureSingleInstanceOrExit();
   }
 
@@ -195,14 +218,12 @@ Future<void> run(List<String> args) async {
       if (inProduction) {
         //await windowManager.setResizable(false);
         //await windowManager.setMaximizable(false);
-        if (Platform.isLinux) {
-          await windowManager.setMinimumSize(Size(400, 740));
-        } else {
-          await windowManager.setMinimumSize(Size(400, 700));
-        }
+        await windowManager.setMinimumSize(
+          SettingConfigItemWindow.kMinWindowSize,
+        );
       }
 
-      if (!await _restoreWindowBounds()) {
+      if (!await _loadWindowBounds()) {
         await windowManager.center();
       }
     }
@@ -306,7 +327,6 @@ class MyAppState extends State<MyApp>
   bool _launchAtStartup = false;
   bool _windowVisibleForMac = false;
   bool _trayGrey = true;
-  Timer? _saveWindowBoundsTimer;
   @override
   void initState() {
     super.initState();
@@ -340,7 +360,6 @@ class MyAppState extends State<MyApp>
     AppLifecycleStateNofity.uninit();
     WidgetsBinding.instance.removeObserver(this);
     if (PlatformUtils.isPC()) {
-      _saveWindowBoundsTimer?.cancel();
       windowManager.removeListener(this);
       trayManager.removeListener(this);
       trayManager.destroy();
@@ -467,49 +486,6 @@ class MyAppState extends State<MyApp>
     AppLifecycleStateNofity.statePaused("close");
   }
 
-  void _saveWindowBounds({bool immediate = false}) {
-    _saveWindowBoundsTimer?.cancel();
-    if (immediate) {
-      _doSaveWindowBounds();
-      return;
-    }
-    _saveWindowBoundsTimer = Timer(
-      const Duration(milliseconds: 500),
-      _doSaveWindowBounds,
-    );
-  }
-
-  Future<void> _doSaveWindowBounds() async {
-    final windowConfig = SettingManager.getConfig().window;
-    windowConfig.maximized = await windowManager.isMaximized();
-    if (!windowConfig.maximized) {
-      final bounds = await windowManager.getBounds();
-      windowConfig.x = bounds.left;
-      windowConfig.y = bounds.top;
-      windowConfig.width = bounds.width;
-      windowConfig.height = bounds.height;
-    }
-    SettingManager.save();
-  }
-
-  @override
-  void onWindowResize() => _saveWindowBounds();
-
-  @override
-  void onWindowResized() => _saveWindowBounds();
-
-  @override
-  void onWindowMove() => _saveWindowBounds();
-
-  @override
-  void onWindowMoved() => _saveWindowBounds();
-
-  @override
-  void onWindowMaximize() => _saveWindowBounds();
-
-  @override
-  void onWindowUnmaximize() => _saveWindowBounds();
-
   @override
   void onWindowMinimize() {
     _windowVisibleForMac = false;
@@ -591,7 +567,7 @@ class MyAppState extends State<MyApp>
 
   Future<void> _uninit() async {
     if (PlatformUtils.isPC()) {
-      _saveWindowBounds(immediate: true);
+      await _saveWindowBounds();
       await windowManager.hide();
     }
     if (startFailedReason == null) {

@@ -198,18 +198,19 @@ class SettingConfigItemUI {
 }
 
 class SettingConfigItemWindow {
+  static Size kMinWindowSize = Platform.isLinux
+      ? const Size(400, 740)
+      : const Size(400, 700);
   double x = 0;
   double y = 0;
   double width = 0;
   double height = 0;
-  bool maximized = false;
 
   Map<String, dynamic> toJson() => {
-    'x': x,
-    'y': y,
-    'width': width,
-    'height': height,
-    'maximized': maximized,
+    'x': x.toInt(),
+    'y': y.toInt(),
+    'width': width.toInt(),
+    'height': height.toInt(),
   };
   void fromJson(Map<String, dynamic>? map) {
     if (map == null) {
@@ -219,7 +220,6 @@ class SettingConfigItemWindow {
     y = (map["y"] ?? 0).toDouble();
     width = (map["width"] ?? 0).toDouble();
     height = (map["height"] ?? 0).toDouble();
-    maximized = map["maximized"] ?? false;
   }
 
   static SettingConfigItemWindow fromJsonStatic(Map<String, dynamic>? map) {
@@ -1684,11 +1684,11 @@ class SettingConfig {
     novice = map["novice"] ?? false;
 
     ui = SettingConfigItemUI.fromJsonStatic(map["ui"]);
-    window = SettingConfigItemWindow.fromJsonStatic(map["window"]);
     dev = SettingConfigItemDev.fromJsonStatic(map["dev"]);
     uiScreen = SettingConfigItemUIScreen.fromJsonStatic(
       map["ui_screen"] ?? map,
     );
+    window = SettingConfigItemWindow.fromJsonStatic(map["window"]);
     if (map["ntp"] is Map) {
       ntp = SettingConfigItemNTP.fromJsonStatic(map["ntp"]);
     } else {
@@ -1970,7 +1970,7 @@ class SettingManager {
     }
   }
 
-  static void save() async {
+  static Future<void> save() async {
     if (_savingConfig) {
       return;
     }
